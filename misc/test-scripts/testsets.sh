@@ -4,8 +4,6 @@
 
 ROUTINE=$1
 shift
-RUN_LOG=local-run.log
-DEBUG_LOG=local-debug.log
 SUMMARY_LOG=local-summary.log
 
 ###################################################################################################################
