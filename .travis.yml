@@ -1,0 +1,26 @@
+language: groovy
+
+dist: trusty
+
+env:
+  global:
+    - GRADLE_OPTS=-Xmx1524m
+
+jdk:
+  - oraclejdk8
+  - oraclejdk11
+  - oraclejdk-ea
+  - openjdk8
+  - openjdk11
+  - openjdk-ea  
+  
+matrix:
+  allow_failures:
+    - jdk: openjdk-ea  
+    - jdk: oraclejdk-ea 
+
+script:
+  - java -version
+  - ./gradlew -version
+  - ./gradlew --stop
+  - ./gradlew --refresh-dependencies clean check test -Dscan --info
